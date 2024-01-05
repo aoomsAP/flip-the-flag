@@ -2,7 +2,6 @@ import styles from "./CountryMap.module.css"
 import { Country } from '../../types';
 import { SiteSettingsContext } from '../../contexts/SiteSettingsContext';
 import { useContext } from 'react';
-import 'dotenv/config'
 
 interface CountryMapProps {
   country: Country;
@@ -12,7 +11,7 @@ const CountryMap = ({ country }: CountryMapProps) => {
   const {language} = useContext(SiteSettingsContext);
 
   const baseUrl = "https://www.google.com/maps/embed/v1/place"
-  const key = process.env.GOOGLE_MAPS_KEY;
+  const key = import.meta.env.GOOGLE_MAPS_KEY;
   const center = `${country.latlng[0]},${country.latlng[1]}`
 
   // returns iframe that loads the Google Maps Embed API, making use of the Place mode
