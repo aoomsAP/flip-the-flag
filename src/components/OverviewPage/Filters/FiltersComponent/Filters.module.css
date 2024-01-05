@@ -1,0 +1,82 @@
+.filters {
+    grid-area: filters;
+    background-color: rgba(var(--input-background),.1);
+    background-color: rgb(var(--body-background));
+    padding: 1rem;
+    z-index: 99;
+    border-right:  1.5px solid rgba(var(--body-link), .1);
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1.5px solid rgba(var(--body-link),.2); 
+    margin: 0;
+    cursor: pointer;
+}
+
+.titleContainer h2 {
+    font-size: 1.5rem;
+    margin: .5rem 0;
+}
+
+.titleContainer p {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.filtersForm {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 2rem;
+}
+
+.filtersForm fieldset {
+    border: 1px solid rgba(var(--input-background),.5);
+    padding: 1rem .7rem;
+}
+
+.filtersForm fieldset legend {
+    font-size: 1.2rem;
+    padding: 0 .5rem;
+    color: rgba(var(--body-link));
+}
+
+/* hide hideButton on desktop */
+.filtersForm>button {
+    display: none;
+}
+
+@media all and (max-width: 800px) {
+    .filters {
+        border: none;
+    }
+
+    .titleContainer {
+        padding: .5rem 1rem;
+        background-color: rgba(var(--input-background),.1);
+        border: 1.5px solid rgba(var(--body-link), .1);
+    }
+
+    .titleContainer h2 {
+        font-size: 1.2rem;
+        margin: .3rem 0;
+    }
+
+    .titleContainer p {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .filtersForm {
+        border-bottom: 1.5px solid rgba(var(--body-link), .1);
+    }
+
+    /* show hideButton */
+    .filtersForm>button {
+        display: block;
+    }
+}

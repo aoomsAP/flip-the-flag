@@ -1,0 +1,124 @@
+/* styling for entire project */
+/* -------------------------- */
+
+/* fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap');
+
+/* color variables */
+
+.light-mode {
+    --body-text: 24, 13, 3;
+    --body-background: 255, 251, 242;
+    --body-link: 155, 62, 15;
+    --body-link-hover: 95, 32, 0;
+    --body-box-shadow: 226, 217, 196;
+    --nav-text: 238, 206, 141;
+    --nav-background: 73, 46, 20;
+    --nav-link: 218, 165, 32;
+    --nav-link-hover: 255, 215, 0;
+    --input-background: 218, 165, 32;
+    --option-background: 248, 234, 200;
+}
+
+.dark-mode {
+    --body-text: 246, 241, 230;
+    --body-background: 41, 24, 0;
+    --body-link: 218, 165, 32;
+    --body-link-hover: 255, 215, 0;
+    --body-box-shadow: 46, 29, 13;
+    --nav-text: 238, 206, 141;
+    --nav-background: 31, 17, 4;
+    --nav-link: 218, 165, 32;
+    --nav-link-hover: 255, 215, 0;
+    --input-background: 218, 165, 32;
+    --option-background: 77, 52, 6;
+}
+
+/* body */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Heebo", sans-serif;
+    color: rgb(var(--body-text));
+    background-color: rgb(var(--body-background));
+}
+
+header,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+/* links */
+
+a {
+    color: rgb(var(--body-link));
+}
+
+a:hover {
+    color: rgb(var(--body-link-hover));
+}
+
+.notactive {
+    text-decoration: none;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+/* input/button elements */
+
+button,
+input,
+select {
+    font-family: "Heebo", sans-serif;
+    padding: .3rem;
+    border: 1.5px outset rgba(var(--body-link), .1);
+    color: rgb(var(--body-text));
+    background-color: rgba(var(--input-background), .1);
+}
+
+button, select {
+    cursor: pointer;
+}
+
+input:hover,
+input:focus,
+input:active,
+button:hover,
+button:focus,
+button:active,
+select:hover,
+select:focus,
+select:active {
+    background-color: rgba(var(--input-background), .2);
+}
+
+option {
+    color: rgba(var(--body-text));
+    background-color: rgba(var(--option-background));
+}
+
+input[type=radio],
+input[type=checkbox] {
+    accent-color: rgb(var(--body-link));
+}
+
+/* lists */
+
+ul {
+    list-style-type: square
+}

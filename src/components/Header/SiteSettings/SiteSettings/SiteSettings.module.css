@@ -1,0 +1,6 @@
+.settings {
+    grid-column-start: 3;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}

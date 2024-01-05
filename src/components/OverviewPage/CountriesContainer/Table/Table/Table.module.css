@@ -1,0 +1,39 @@
+.tableContainer {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    overflow: auto;
+    /* white-space: nowrap; */
+    margin-bottom: 2rem;
+}
+
+.table {
+    border-collapse: collapse;
+    border: 1.5px solid rgba(var(--input-background), 0.2);
+}
+
+.table td,
+.table th {
+    padding: .7rem;
+}
+
+.table th {
+    text-align: left;
+    background-color: rgba(var(--body-link), 0.2);
+    border-bottom: 1.5px solid rgba(var(--input-background), 0.2);
+}
+
+.table th:nth-child(4) {
+    width: 50%;
+}
+
+.table tr:nth-child(odd) {
+    background-color: rgba(var(--nav-link), 0.1);
+}
+
+.table tr:nth-child(even) {
+    background-color: rgba(var(--nav-link), 0.05);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(var(--nav-link), 0.2);
+}

@@ -1,0 +1,14 @@
+.footer {    
+    color: rgb(var(--nav-text));
+    background: linear-gradient(rgb(var(--nav-background)), black);
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer a {
+    color: rgb(var(--nav-link));
+}
+
+.footer a:hover {
+    color: rgb(var(--nav-link-hover));
+}

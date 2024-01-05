@@ -1,0 +1,19 @@
+.main {
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "filters mainContainer";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+@media all and (max-width: 800px) {
+    .main {
+        grid-template-areas:
+            "title"
+            "filters"
+            "mainContainer";
+        grid-template-rows: auto auto 1fr;
+        grid-template-columns: 1fr;
+    }
+}

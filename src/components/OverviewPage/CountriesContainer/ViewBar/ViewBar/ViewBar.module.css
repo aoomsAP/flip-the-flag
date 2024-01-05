@@ -1,0 +1,15 @@
+.viewBar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    gap: 1rem;
+}
+
+@media all and (max-width: 800px) {
+    .viewBar {
+        flex-wrap: wrap;
+        border-bottom: 1.5px solid rgba(var(--body-link), .1);
+    }
+}

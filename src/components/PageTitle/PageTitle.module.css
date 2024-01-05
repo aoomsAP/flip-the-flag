@@ -1,0 +1,28 @@
+/* background image source: https://getwallpapers.com/collection/world-map-desktop-wallpaper-hd */
+
+.titleContainer {
+    grid-area: title;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1rem 2rem;
+}
+
+.titleContainerLight {
+    background-image: radial-gradient(
+        rgba(255,255,255,0.5),
+        rgba(255,255,255,0.5),
+        rgba(255,255,255,0)
+    ), url("/assets/images/worldmap-light.png");
+    background-color: white;
+}
+
+.titleContainerDark {
+    background-image: url("/assets/images/worldmap-dark.png");
+    background-color: black;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+}

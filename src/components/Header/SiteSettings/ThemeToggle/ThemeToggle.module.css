@@ -1,0 +1,15 @@
+.themeButton {
+    color: rgb(var(--nav-link));
+    margin: 0;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border: 1.5px outset rgba(var(--input-background), .2);
+    padding: .5rem .7rem;
+    height: 45px;
+}
+
+.themeButton:hover {
+    color: rgb(var(--nav-link-hover));
+}

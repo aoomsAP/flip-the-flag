@@ -1,0 +1,11 @@
+.mainContainer {
+    grid-area: mainContainer;
+    width: 100%;
+    padding: 2rem 3rem;
+}
+
+@media all and (max-width: 800px) {
+    .mainContainer {
+        padding: 1rem;
+    }
+}

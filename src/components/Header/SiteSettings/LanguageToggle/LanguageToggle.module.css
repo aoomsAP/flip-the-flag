@@ -1,0 +1,30 @@
+.languageToggle {
+    display: inline-block;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-decoration: none;
+    color: rgb(var(--nav-link));
+    margin-right: 1rem;
+    border: 1.5px outset rgba(var(--input-background), .2);
+    padding: .5rem .7rem;
+    height: 45px;
+}
+
+.languageToggle:hover {
+    background-color: rgba(var(--input-background), .2);
+}
+
+.languageToggle input[type=radio] {
+    display: none;
+}
+
+.languageToggle label:hover {
+    cursor: pointer;
+    color: rgb(var(--nav-link-hover));
+}
+
+.languageToggle strong {
+    font-weight: normal;
+    text-decoration: underline;
+}
