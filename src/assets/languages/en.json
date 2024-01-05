@@ -5,14 +5,12 @@
     "locale_string": "en-US",
 
     "project_title": "Flip The Flag",
-    "home_intro_1": "Are you often uncertain when you see a flag emoji on social media?",
-    "home_intro_2": "Do you want to expand your geographical knowledge?",
-    "home_intro_3": "provides a handy",
-    "home_intro_overview": "overview of flags",
-    "home_intro_4": "and country details to help you in your journey.",
+    "home_intro": "Are you often uncertain when you see a flag emoji on social media? Do you want to expand your geographical knowledge? Flip The Flag provides a handy overview of flags and country details to help you in your journey.",
     "country_spotlight": "Country Spotlight",
 
     "country": "Country",
+    "name": "Name",
+    "official_name": "Official name",
     "flag": "Flag",
     "capital": "Capital",
     "no_capital": "No capital",
@@ -24,9 +22,14 @@
     "currency": "Currency",
     "timezone": "Timezone",
     "neighbors": "Neighbors",
+    "no_neighbors": "No neighbor",
+    "status": "Status",
     "independent": "Independent",
     "not_independent": "Not independent",
-    "un_member": "UN member",
+    "un_membership": "United Nations",
+    "un_member": "Member",
+    "not_un_member": "No member",
+    "country_unavailable": "[country unavailable]",
 
     "overview_of_countries": "Overview of countries",
 

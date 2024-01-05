@@ -3,8 +3,7 @@ import { SiteSettingsContext } from "../../contexts/SiteSettingsContext";
 import styles from "./HomePage.module.css";
 
 // components
-import { Link } from "react-router-dom";
-import CountrySpotlight from "../../components/HomePage/CountrySpotlight/CountrySpotlight";
+import CountrySpotlight from "../../components/CountrySpotlight/CountrySpotlight";
 
 const HomePage = () => {
     const { theme, lexicon } = useContext(SiteSettingsContext);
@@ -17,7 +16,7 @@ const HomePage = () => {
             <main className={`${styles.main} ${theme === "light" ? `${styles.bgLight}` : `${styles.bgDark}`}`}>
                 <section className={styles.titleContainer}>
                     <h1>{lexicon.project_title}</h1>
-                    <p>{lexicon.home_intro_1} {lexicon.home_intro_2} <strong>{lexicon.project_title}</strong> {lexicon.home_intro_3} <Link to="/countries">{lexicon.home_intro_overview}</Link> {lexicon.home_intro_4}</p>
+                    <p>{lexicon.home_intro}</p>
                 </section>
                 <CountrySpotlight/>
             </main>

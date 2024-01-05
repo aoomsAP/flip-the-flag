@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     overflow: auto;
-    /* white-space: nowrap; */
     margin-bottom: 2rem;
 }
 
@@ -36,4 +35,9 @@
 
 .table tbody tr:hover {
     background-color: rgba(var(--nav-link), 0.2);
+}
+
+/* don't allow wrapping for subregion column */
+.table td:nth-child(4) {
+    white-space: nowrap;
 }

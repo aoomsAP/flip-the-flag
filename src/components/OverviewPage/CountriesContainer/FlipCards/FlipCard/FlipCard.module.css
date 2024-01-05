@@ -59,7 +59,7 @@
   outline: 1px solid rgb(var(--nav-link));
   outline-offset: -0.5rem;
   transform: rotateY(180deg);
-  box-shadow: 1px 1px 5px 3px rgb(var(--body-box-shadow));
+  box-shadow: 1px 1px 5px 3px rgb(var(--body-box-shadow),3);
   transition: all .8s;
 }
 

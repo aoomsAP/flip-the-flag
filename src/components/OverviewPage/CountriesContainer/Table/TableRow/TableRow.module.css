@@ -1,5 +1,6 @@
 .row {
     padding: 1rem;
+    cursor: pointer;
 }
 
 .flag img {

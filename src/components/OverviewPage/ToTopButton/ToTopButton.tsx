@@ -8,7 +8,7 @@ const ToTopButton = () => {
         <>
             <a href="#top"
                 className={styles.toTopButton}>
-                &#65085;
+                <i className="bi bi-chevron-bar-up"></i>
             </a>
         </>
     )

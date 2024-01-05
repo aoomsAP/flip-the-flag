@@ -7,8 +7,8 @@ import { useContext } from "react";
 import { CountriesLayoutContext } from "../../../../../contexts/CountriesLayoutContext";
 
 // CountryData components
-import Capital from "../../../../CountryData/Capital";
-import Name from "../../../../CountryData/Name";
+import Capital from "../../../../CountryData/Data/Capital";
+import Name from "../../../../CountryData/Data/Name";
 import Flag from "../../../../CountryData/Flag/Flag";
 
 interface FlipCardProps {

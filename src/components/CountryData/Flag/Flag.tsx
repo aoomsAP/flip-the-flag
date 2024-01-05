@@ -7,16 +7,19 @@ interface FlagProps {
     height: string,
 }
 
-const Flag = ({country,width,height}: FlagProps) => {
+const Flag = ({ country, width, height }: FlagProps) => {
+
+    // RETURNS img element with png flag
+    // includes alt description, if available through the API
 
     return (
         <>
             <img
+                className={styles.flagImg}
                 src={country.flags.png}
                 alt={country.flags.alt ? country.flags.alt : ""}
                 width={width}
                 height={height}
-                className={styles.flagImg}
             />
         </>
     )

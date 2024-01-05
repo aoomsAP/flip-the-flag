@@ -6,13 +6,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap');
 
+/* icons */
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 /* color variables */
 
 .light-mode {
     --body-text: 24, 13, 3;
     --body-background: 255, 251, 242;
-    --body-link: 155, 62, 15;
-    --body-link-hover: 95, 32, 0;
+    --body-link: 138, 85, 21;
+    --body-link-hover: 92, 60, 14;
     --body-box-shadow: 226, 217, 196;
     --nav-text: 238, 206, 141;
     --nav-background: 73, 46, 20;
@@ -24,12 +28,12 @@
 
 .dark-mode {
     --body-text: 246, 241, 230;
-    --body-background: 41, 24, 0;
+    --body-background: 23, 17, 10;
     --body-link: 218, 165, 32;
     --body-link-hover: 255, 215, 0;
-    --body-box-shadow: 46, 29, 13;
+    --body-box-shadow: 36, 29, 10;
     --nav-text: 238, 206, 141;
-    --nav-background: 31, 17, 4;
+    --nav-background: 31, 23, 11;
     --nav-link: 218, 165, 32;
     --nav-link-hover: 255, 215, 0;
     --input-background: 218, 165, 32;
