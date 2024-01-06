@@ -4,7 +4,7 @@ import styles from "./SiteSettings.module.css"
 
 const SiteSettings = () => {
 
-    // returns the site settings:
+    // RETURNS the site settings:
     // - a language toggle
     // - a theme toggle
 

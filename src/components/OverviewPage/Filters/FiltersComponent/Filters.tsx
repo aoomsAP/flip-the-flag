@@ -73,7 +73,8 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
 
     }, [countries, language, setFilteredCountries, checkedContinents, populationFilter, searchString])
 
-    // returns Filters aside, which consists of:
+
+    // RETURNS Filters aside, with:
     // - a title container, which can be clicked to show or hide the Filters element, indicated by a chevron
     // - a form with several Filters, and a button to hide the Filters element again
 
@@ -103,7 +104,7 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
                             allContinents={allContinents}
                             checkedContinents={checkedContinents}
                             setCheckedContinents={setCheckedContinents}
-                        />
+                        />                   
                         <PopulationFilter
                             label={lexicon.population_label}
                             setPopulationFilter={setPopulationFilter}

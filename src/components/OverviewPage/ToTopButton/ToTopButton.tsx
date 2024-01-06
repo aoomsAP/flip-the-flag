@@ -2,7 +2,7 @@ import styles from "./ToTopButton.module.css"
 
 const ToTopButton = () => {
 
-    // returns element that leads user back to the top of the page
+    // RETURNS element that leads user back to the top of the page
 
     return (
         <>

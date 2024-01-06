@@ -10,7 +10,7 @@ interface PopulationFilterProps {
 }
 
 const PopulationFilter = ({ label, setPopulationFilter }: PopulationFilterProps) => {
-    const {countries} = useContext(DataContext);
+    const {loading, countries} = useContext(DataContext);
 
     const maxPopulation = countries.reduce((max, country) => {
         if (country.population > max) return country.population;
@@ -21,18 +21,21 @@ const PopulationFilter = ({ label, setPopulationFilter }: PopulationFilterProps)
         return min;
     }, maxPopulation);
 
-    // returns fieldset to filter on Population
+    // RETURNS fieldset to filter on Population
     // includes MultiRangeSlider
+
+    // only return MultiRangeSlider if all countries are loaded
+    // this is important because min & max values of range depend on all countries being loaded
 
     return (
         <>
             <fieldset className={styles.population}>
                 <legend>{label}</legend>
-                <MultiRangeSlider
+                {!loading && <MultiRangeSlider
                     min={minPopulation}
                     max={maxPopulation}
                     onChange={setPopulationFilter}
-                />
+                />}
             </fieldset>
         </>
     )

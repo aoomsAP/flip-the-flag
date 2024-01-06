@@ -11,7 +11,7 @@ interface SortSettingsProps {
 const SortSettings = ({ sort, setSort, numberOfCountries }: SortSettingsProps) => {
     const { lexicon } = useContext(SiteSettingsContext);
 
-    // returns element that contains settings to sort the data
+    // RETURNS element that contains settings to sort the data
     // - info about number of countries currently displayed
     // - button to randomly shuffle data
     // - select with several sort options
@@ -25,13 +25,14 @@ const SortSettings = ({ sort, setSort, numberOfCountries }: SortSettingsProps) =
                 </div>
 
                 <div className="shuffle">
-                    {/* sort value is a random number, so the sort useState is always different & triggers rerender*/}
+                    {/* sort value is a random number, so the sort state is always different with each click & triggers rerender */}
                     <button onClick={() => setSort(`random ${Math.random()}`)}>{lexicon.shuffle}</button>
                 </div>
 
                 <div className="sort">
                     <select name="sort" id="sort" onChange={(e) => setSort(e.target.value)} value={sort}>
-                        <option>{lexicon.no_sorting}</option>
+                        <option value="random">
+                            {lexicon.no_sorting}</option>
                         <option value="alphabetic [asc]">
                             {lexicon.alphabetic_asc}</option>
                         <option value="alphabetic [desc]">

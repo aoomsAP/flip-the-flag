@@ -9,7 +9,7 @@ interface HideFiltersButtonProps {
 const HideFiltersButton = ({setShowFilters}: HideFiltersButtonProps) => {
     const { lexicon } = useContext(SiteSettingsContext);
 
-    // returns a button that hides the Filters element
+    // RETURNS a button that hides the Filters element
     // it also scrolls to the top of the page
 
     return (

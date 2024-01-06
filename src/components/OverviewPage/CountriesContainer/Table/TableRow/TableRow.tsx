@@ -19,7 +19,7 @@ const Table = ({ country }: TableRowProps) => {
     // inspired by https://stackoverflow.com/a/71002189
     const navigate = useNavigate();
 
-    // returns one table row
+    // RETURNS one table row
     // with the following data: Flag, Name, Capital, Subregion & Population
     // the entire row is clickable and leads to the DetailPage of the respective country
 

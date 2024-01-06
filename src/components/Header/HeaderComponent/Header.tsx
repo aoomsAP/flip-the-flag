@@ -1,17 +1,17 @@
-import NavMenu from "../NavComponent/Nav"
+import Nav from "../NavComponent/Nav"
 import SiteSettings from "../SiteSettings/SiteSettings/SiteSettings"
 import styles from "./Header.module.css"
 
 const Header = () => {
 
-    // returns header, which consists of:
-    // - a navigation menu
-    // - a section that contains the site wide settings
+    // RETURNS header, with:
+    // - a navigation element
+    // - a section that contains the site settings
 
     return (
         <>
             <header className={styles.header}>
-                <NavMenu />
+                <Nav />
                 <SiteSettings />
             </header>
         </>

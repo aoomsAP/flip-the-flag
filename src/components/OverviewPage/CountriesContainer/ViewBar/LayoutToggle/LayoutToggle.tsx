@@ -10,8 +10,8 @@ const LayoutToggle = () => {
     const { lexicon } = useContext(SiteSettingsContext);
     const { layout, setLayout } = useContext(CountriesLayoutContext);
 
-    // returns element that allows user to toggle between layout settings
-    // - label to further explain the setting
+    // RETURNS element that allows user to toggle between layout settings
+    // - label, depending on layout setting
     // - select with 3 options
 
     return (

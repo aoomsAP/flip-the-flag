@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import { SiteSettingsContext } from "../../contexts/SiteSettingsContext";
 import { Country } from "../../types";
@@ -23,48 +23,59 @@ const CountrySpotlight = () => {
     // inspired by https://stackoverflow.com/a/71002189
     const navigate = useNavigate();
 
-    // generates a random number and gets the country with that index
-    const randomIndex = Math.floor(Math.random() * countries.length);
+    const [randomIndex, setRandomIndex] = useState(0);
+    useEffect(() => {
+        // set a random index every 5 minutes
+        const interval = setInterval(() => {
+            setRandomIndex(Math.floor(Math.random() * countries.length));
+        }, 5 * 60 * 1000)
+
+        // cleanup
+        return () => {
+            clearInterval(interval);
+        };
+
+        // fire hook again when countries data changes
+    }, [countries])
+
+    // random country
     const country: Country = countries[randomIndex];
 
-    // returns a box that contains a flag & info of one country
+    // RETURNS container with flag & info of one country
     // - a title
     // - a flag
     // - a list with country details
-    //
-    // if country can't be found or countries are still loading, return loading indicator
 
-    return (
+    if (!loading && country) return (
         <>
             <section className={`${styles.countryContainer} ${theme === "light" ? `${styles.countryContainerLight}` : `${styles.countryContainerDark}`}`}>
+                <article className={styles.countrySpotlight}
+                    onClick={() => navigate(`/countries/${country.name.common.toLocaleLowerCase()}`)}>
 
-                {(!country || loading) && <LoadingIndicator />}
+                    <h2>{lexicon.country_spotlight}: <Name country={country} /></h2>
+                    <div className={styles.randomCountry}>
+                        <figure>
+                            <Flag country={country} width={"100%"} height={"100%"} />
+                        </figure>
+                        <DataList
+                            country={country}
+                            capital
+                            continent
+                            subregion
+                            size
+                            population
+                            language
+                        />
+                    </div>
 
-                {(country && !loading) &&
-                        <article className={styles.countrySpotlight}
-                            onClick={() => navigate(`/countries/${country.name.common.toLocaleLowerCase()}`) }>
-
-                            <h2>{lexicon.country_spotlight}: <Name country={country} /></h2>
-                            <div className={styles.randomCountry}>
-                                <figure>
-                                    <Flag country={country} width={"100%"} height={"100%"} />
-                                </figure>
-                                <DataList
-                                    country={country}
-                                    capital
-                                    continent
-                                    subregion
-                                    size
-                                    population
-                                    language
-                                />
-                            </div>
-
-                        </article>
-                }
+                </article>
             </section>
         </>
     )
+
+    // if the country can't be found or countries are still loading, returns loading indicator
+
+    if (!country || loading) return <LoadingIndicator />
 }
 
 export default CountrySpotlight

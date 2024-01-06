@@ -25,60 +25,52 @@ const DetailPage = () => {
     const { name } = useParams();
     const country: Country | undefined = countries.find(c => c.name.common.toLocaleLowerCase() === name?.toLocaleLowerCase());
 
-    // the detail page consists of:
+    // RETURNS detail page, with:
     // - a title wrapper
     // - a map
-    // - lists of details about the country
-    //
-    // if the country is not found or the countries data is still loading, merely a loading indicator is shown
+    // - a list of details about the country
 
-    return (
+    if (country && !loading) return (
         <>
             <main>
+                <PageTitle title={<>
+                    <Name country={country} />
+                    &nbsp;
+                    <Flag country={country} width={"45px"} height={"100%"} />
+                </>} />
 
-                {(!country || loading) && <LoadingIndicator />}
+                <section className={styles.mainContainer}>
 
-                {(country && !loading) && <>
+                    <article className={styles.mapContainer}>
+                        <CountryMap country={country} />
+                    </article>
 
-                    <PageTitle title={<>
-                        <Name country={country} />
-                        &nbsp;
-                        <Flag country={country} width={"45px"} height={"100%"} />
-                    </>} />
-
-                    <section className={styles.mainContainer}>
-
-                        <article className={styles.mapContainer}>
-                            <CountryMap country={country} />
-                        </article>
-
-                        <article className={styles.infoContainer}>
-                            <DataList country={country}
-                                officialName
-                                status
-                                capital
-                                continent
-                                subregion
-                            />
-                            <DataList country={country}
-                                size
-                                population
-                                language
-                                currency
-                                timezone
-                            />
-                            <DataList country={country}
-                                neighbors
-                            />
-                        </article>
-
-                    </section>
-
-                </>}
-
+                    <article className={styles.infoContainer}>
+                        <DataList country={country}
+                            officialName
+                            status
+                            capital
+                            continent
+                            subregion
+                        />
+                        <DataList country={country}
+                            size
+                            population
+                            language
+                            currency
+                            timezone
+                        />
+                        <DataList country={country}
+                            neighbors
+                        />
+                    </article>
+                </section>
             </main>
         </>
     )
+
+    // if the country is not found or the countries data is still loading, only a loading indicator is shown
+    if (!country || loading) return <LoadingIndicator />
 }
 
 export default DetailPage;

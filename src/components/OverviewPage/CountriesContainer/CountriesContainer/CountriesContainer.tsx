@@ -17,7 +17,7 @@ interface CountriesContainerProps {
 const CountriesContainer = ({sort,setSort,sortedCountries}: CountriesContainerProps) => {
     const {layout} = useContext(CountriesLayoutContext)
 
-    // the overview container consists of:
+    // RETURNS countries overview container, with
     //  - a bar with layout settings & sorting options
     //  - a list of countries, formatted as cards (flags) or as a table, depending on the Layout context
 

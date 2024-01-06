@@ -7,7 +7,7 @@ import Header from "../Header/HeaderComponent/Header";
 
 const Root = () => {
 
-    // root consists of:
+    // ROOT, with:
     // - header
     // - main
     // - footer

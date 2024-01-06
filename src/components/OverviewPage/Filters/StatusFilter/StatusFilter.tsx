@@ -8,21 +8,21 @@ interface StatusFilterProps {
 }
 
 const StatusFilter = ({ label }: StatusFilterProps) => {
-    // contextx
-    const { mode, setMode } = useContext(DataContext);
+    // contexts
+    const { status, setStatus } = useContext(DataContext);
     const { lexicon } = useContext(SiteSettingsContext);
 
-    // returns fieldset to toggle the status of the countries
+    // RETURNS fieldset to toggle the status of the countries
     // triggers a reloading of the "countries" data
 
     return (
         <>
-            <fieldset className={styles.mode}>
+            <fieldset className={styles.status}>
                 <legend>{label}</legend>
-                <input type="radio" name="mode" value="independent?status=true" checked={mode === "independent?status=true"}
-                    onChange={(e) => setMode(e.target.value)} />{lexicon.status_independent}<br />
-                <input type="radio" name="mode" value="all" checked={mode === "all"}
-                    onChange={(e) => setMode(e.target.value)} />{lexicon.status_all}
+                <input type="radio" name="status" value="independent?status=true" checked={status === "independent?status=true"}
+                    onChange={(e) => setStatus(e.target.value)} />{lexicon.status_independent}<br />
+                <input type="radio" name="status" value="all" checked={status === "all"}
+                    onChange={(e) => setStatus(e.target.value)} />{lexicon.status_all}
             </fieldset>
         </>
     )

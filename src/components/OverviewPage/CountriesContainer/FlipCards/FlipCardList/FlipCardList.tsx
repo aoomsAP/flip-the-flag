@@ -8,7 +8,7 @@ interface FlipCardListProps {
 
 const FlipCardList = ({ countries }: FlipCardListProps) => {
 
-    // returns list of FlipCards
+    // RETURNS list of FlipCards
 
     return (
         <>

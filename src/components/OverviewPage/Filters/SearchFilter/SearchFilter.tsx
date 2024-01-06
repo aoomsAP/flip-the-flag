@@ -7,8 +7,7 @@ interface SearchFilterProps {
 
 const SearchFilter = ({label, setSearchString }: SearchFilterProps) => {
 
-    // returns fieldset to filter on Search term
-    // includes MultiRangeSlider
+    // RETURNS fieldset to filter on Search term
 
     return (
         <>

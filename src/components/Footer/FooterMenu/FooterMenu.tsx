@@ -7,8 +7,8 @@ import styles from "./FooterMenu.module.css"
 const FooterMenu = () => {
     const { lexicon } = useContext(SiteSettingsContext)
 
-    // returns footer menu
-    // contains one regular item and one link
+    // RETURNS footer menu
+    // contains one menu item and menu link
 
     return (
         <>

@@ -10,7 +10,7 @@ interface FlagProps {
 const Flag = ({ country, width, height }: FlagProps) => {
 
     // RETURNS img element with png flag
-    // includes alt description, if available through the API
+    // includes alt description, if available in the API
 
     return (
         <>

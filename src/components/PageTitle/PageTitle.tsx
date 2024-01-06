@@ -9,7 +9,7 @@ interface PageTitleProps {
 const PageTitle = ({title}: PageTitleProps) => {
     const { theme } = useContext(SiteSettingsContext);
 
-    // returns title wrapper section
+    // RETURNS title wrapper
     // if theme is set to light, light background is set, otherwise dark background
     // title can be formatted as a string or as jsx
 

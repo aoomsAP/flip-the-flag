@@ -10,7 +10,7 @@ interface ViewBarProps {
 
 const ViewBar = ({sort,setSort,numberOfCountries}: ViewBarProps) => {
 
-    // returns element to adjust settings of how the data is viewed
+    // RETURNS element to adjust how the data is viewed
     // - layout toggle
     // - sort settings
 

@@ -21,7 +21,7 @@ const ContinentsFilter = ({ label, allContinents, checkedContinents, setCheckedC
         else setCheckedContinents(checkedContinents.filter((continent) => continent != e.target.value));
     }
 
-    // returns fieldset that filters on Continent, which contains:
+    // RETURNS fieldset that filters on Continent, which contains:
     // - checkboxes of all possible continents
     // - two buttons to either check all continents, or uncheck all of them
 

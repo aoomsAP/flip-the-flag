@@ -5,9 +5,9 @@ import styles from "./ThemeToggle.module.css"
 const ThemeToggle = () => {
     const { theme, setTheme } = useContext(SiteSettingsContext);
 
-    // returns button that switches theme from dark to light with each click
-    // when set to light, the icon will be a sun
-    // when set to dark, the icon will be a moon
+    // RETURNS button that switches theme from dark to light with each click
+    // - when set to light, the icon will be a sun
+    // - when set to dark, the icon will be a moon
 
     return (
         <>

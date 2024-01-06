@@ -1,8 +1,10 @@
 // FlipCard design based on: https://www.w3schools.com/howto/howto_css_flip_card.asp
 
-import styles from "./FlipCard.module.css"
 import { Link } from "react-router-dom";
 import { Country } from "../../../../../types"
+import styles from "./FlipCard.module.css"
+
+// contexts
 import { useContext } from "react";
 import { CountriesLayoutContext } from "../../../../../contexts/CountriesLayoutContext";
 
@@ -18,11 +20,9 @@ interface FlipCardProps {
 const FlipCard = ({ country }: FlipCardProps) => {
     const { layout } = useContext(CountriesLayoutContext);
 
-    // returns one single FlipCard
-    //
+    // RETURNS one single FlipCard
     // - the front of the FlipCard looks like a country Flag,
-    //   unless the layout is set to "flagsWithName", then the Name of the country is added as well
-    //
+    //   (when layout is set to "flagsWithName", the Name of the country is added underneath)
     // - the back of the FlipCard contains the Name of the country, its Capital, and a link to the Detail page
 
     return (

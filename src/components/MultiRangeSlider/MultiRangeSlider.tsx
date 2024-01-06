@@ -59,7 +59,8 @@ const MultiRangeSlider = ({ min, max, onChange }: MultiRangeSliderProps) => {
         onChange({ min: minVal, max: maxVal });
     }, [minVal, maxVal, onChange]);
 
-    // returns a range slider with two inputs
+    // RETURNS a range slider with two inputs & respective values underneath
+
     return (
         <div className="rangeContainer">
             <input

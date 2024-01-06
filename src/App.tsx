@@ -7,7 +7,7 @@ import HomePage from "./pages/HomePage/HomePage"
 import OverviewPage from "./pages/OverviewPage/OverviewPage"
 import DetailPage from "./pages/DetailPage/DetailPage"
 
-// contextx
+// contexts
 import { DataProvider } from "./contexts/DataContext"
 import { SiteSettingsProvider } from "./contexts/SiteSettingsContext"
 

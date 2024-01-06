@@ -26,6 +26,8 @@ const OverviewPage = () => {
     const sortedCountries = filteredCountries
         .sort((a, b) => {
             if (sort.startsWith("random")) {
+                // set sort to nothing, otherwise sort remains "random" and countries will be needlessly randomized with every filter/rerender
+                setSort("");
                 // returns randomized array
                 return Math.random() - 0.5;
             }
@@ -41,14 +43,14 @@ const OverviewPage = () => {
                 // returns largest population size to smallest
                 else return b.population - a.population;
             }
-            // default = unsorted
+            // default: no sorting applied
             return 0;
         });
 
-    // the overview page consists of:
+    // RETURNS overview page, with:
     // - a title wrapper
     // - an aside with filters
-    // - a container with an overview of countries
+    // - a container with an overview of countries & a bar for sorting/layout
     // - an arrow to go back to the top of the page
 
     return (
@@ -57,8 +59,7 @@ const OverviewPage = () => {
 
                 <PageTitle title={lexicon.overview_of_countries} />
 
-                <Filters
-                    setFilteredCountries={setFilteredCountries} />
+                <Filters setFilteredCountries={setFilteredCountries} />
 
                 <CountriesLayoutProvider>
                     <CountriesContainer

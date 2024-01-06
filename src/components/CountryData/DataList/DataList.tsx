@@ -38,8 +38,10 @@ const DataList = ({ country,
 }: DataListProps) => {
     const { lexicon } = useContext(SiteSettingsContext);
 
-    // RETURNS list of CountryData
-    // for every parameter that is passed to DataList component
+    // RETURNS list of country data, with:
+    // - a list item, with label, followed by the respective data
+
+    // includes every (optional) parameter that is passed to DataList component
 
     return (
         <>

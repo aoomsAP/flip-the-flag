@@ -5,7 +5,7 @@ import styles from "./LanguageToggle.module.css"
 const LanguageToggle = () => {
     const { language, setLanguage } = useContext(SiteSettingsContext);
 
-    // returns two radio buttons to choose between two languages (english "en" and dutch "nl")
+    // RETURNS two radio buttons to choose between two languages (english "en" and dutch "nl")
 
     return (
         <>

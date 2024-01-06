@@ -32,6 +32,7 @@
     flex-direction: column;
     padding: 1.5rem 0;
     gap: 2rem;
+    width: 230px;
 }
 
 .filtersForm fieldset {
@@ -73,6 +74,7 @@
 
     .filtersForm {
         border-bottom: 1.5px solid rgba(var(--body-link), .1);
+        width: 100%;
     }
 
     /* show hideButton */

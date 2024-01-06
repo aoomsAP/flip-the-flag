@@ -6,9 +6,8 @@ import styles from "./Nav.module.css"
 const Nav = () => {
     const { lexicon } = useContext(SiteSettingsContext)
 
-    // returns nav, which consists of:
-    // - a menu, which consists of:
-    //      - two links
+    // RETURNS nav, with:
+    // - a menu, with two links
 
     return (
         <>

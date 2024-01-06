@@ -11,7 +11,7 @@ interface TableProps {
 const Table = ({ countries }: TableProps) => {
     const { lexicon } = useContext(SiteSettingsContext);
 
-    // returns table of countries
+    // RETURNS table of countries
     // with the following columns: Flag, Name, Capital, Subregion & Population
 
     return (
