@@ -32,13 +32,13 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
         let isCancelled = false;
 
         const loadCountries = async () => {
-            // function to fetch country data starts, so loading state is set to true
-            setLoading(true);
-
-            // countries data is fetched & countries state is set
-            // - if status is "all", then all countries in the API are fetched
-            // - if status is "independent?status=true", then only independent "official" countries are fetched
             try {
+                // function to fetch country data starts, so loading state is set to true
+                setLoading(true);
+
+                // countries data is fetched & countries state is set
+                // - if status is "all", then all countries in the API are fetched
+                // - if status is "independent?status=true", then only independent "official" countries are fetched
                 const response = await fetch(`https://restcountries.com/v3.1/${status}`);
                 const countries: Country[] = await response.json();
 
@@ -46,14 +46,20 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
                 const shuffledCountries = countries.sort(() => Math.random() - 0.5);
 
                 // only set countries if not cancelled
-                if (!isCancelled) setCountries(shuffledCountries);
+                if (!isCancelled) {
+                    // store countries in state
+                    setCountries(shuffledCountries);
+
+                    // countries are loaded into state, so loading state is set to false
+                    setLoading(false);
+                } 
             }
             catch (error) {
-                if (!isCancelled) console.log(error);
+                if (!isCancelled) {
+                    console.log(error);
+                    setLoading(false);
+                } 
             }
-
-            // countries are loaded into state, so loading state is set to false
-            setLoading(false);
         }
 
         // execute loadCountries

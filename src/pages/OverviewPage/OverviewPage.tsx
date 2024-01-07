@@ -9,9 +9,9 @@ import { SiteSettingsContext } from "../../contexts/SiteSettingsContext";
 
 // components
 import PageTitle from "../../components/PageTitle/PageTitle";
-import Filters from "../../components/OverviewPage/Filters/FiltersComponent/Filters";
-import ToTopButton from "../../components/OverviewPage/ToTopButton/ToTopButton";
-import CountriesContainer from "../../components/OverviewPage/CountriesContainer/CountriesContainer/CountriesContainer";
+import Filters from "../../components/Filters/FiltersComponent/Filters";
+import ToTopButton from "../../components/ToTopButton/ToTopButton";
+import CountriesContainer from "../../components/CountriesContainer/CountriesContainer";
 
 const OverviewPage = () => {
     // contexts
@@ -19,34 +19,43 @@ const OverviewPage = () => {
     const { countries } = useContext(DataContext);
 
     // states
-    const [sort, setSort] = useState<string>(`random ${Math.random()}`);
+    const [sortValue, setSortValue] = useState<string>("");
     const [filteredCountries, setFilteredCountries] = useState<Country[]>([...countries]);
 
     // the below function sorts the filtered countries
-    const sortedCountries = filteredCountries
-        .sort((a, b) => {
-            if (sort.startsWith("random")) {
-                // set sort to nothing, otherwise sort remains "random" and countries will be needlessly randomized with every filter/rerender
-                setSort("");
-                // returns randomized array
-                return Math.random() - 0.5;
-            }
-            if (sort.startsWith("alphabetic")) {
-                // returns alphabetized from A to Z
-                if (/\[asc\]/.test(sort)) return a.name.common.localeCompare(b.name.common)
-                // returns alphabetized from Z to A
-                else return b.name.common.localeCompare(a.name.common);
-            }
-            if (sort.startsWith("population")) {
-                // returns smallest population size to largest
-                if (/\[asc\]/.test(sort)) return a.population - b.population;
-                // returns largest population size to smallest
-                else return b.population - a.population;
-            }
-            // default: no sorting applied
-            return 0;
-        });
+    const sortCountries = (a: Country, b: Country) => {
 
+        // random/shuffle sorting (value "random" will be often followed by random number, so needs to be checked differently than the presets with literal values)
+        if (sortValue.startsWith("random")) {
+            // set sortValue to nothing, otherwise sortValue remains "random" and countries will be needlessly randomized with every filter/rerender
+            setSortValue("");
+            // returns randomized array
+            return Math.random() - 0.5;
+        }
+
+        // preset sorting options
+        switch (sortValue) {
+            // returns alphabetized from A to Z
+            case "alphabetic_asc": return a.name.common.localeCompare(b.name.common);
+
+            // returns alphabetized from A to Z
+            case "alphabetic_desc": return b.name.common.localeCompare(a.name.common);
+
+            // returns smallest population size to largest
+            case "population_asc": return a.population - b.population;
+
+            // returns largest population size to smallest
+            case "population_desc": return b.population - a.population;
+
+            // no sorting applied
+            default: return 0;
+        }
+    };
+
+    const filteredAndSortedCountries = filteredCountries
+        .sort(sortCountries);
+
+        
     // RETURNS overview page, with:
     // - a title wrapper
     // - an aside with filters
@@ -63,9 +72,9 @@ const OverviewPage = () => {
 
                 <CountriesLayoutProvider>
                     <CountriesContainer
-                        sort={sort}
-                        setSort={setSort}
-                        sortedCountries={sortedCountries}/>
+                        sortValue={sortValue}
+                        setSortValue={setSortValue}
+                        filteredAndSortedCountries={filteredAndSortedCountries} />
                 </CountriesLayoutProvider>
 
                 <ToTopButton />

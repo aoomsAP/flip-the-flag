@@ -12,7 +12,7 @@ const CountryMap = ({ country }: CountryMapProps) => {
 
   // google maps embed API url variables
   const baseUrl = "https://www.google.com/maps/embed/v1/place"
-  const key = import.meta.env.VITE_GOOGLE_MAPS_KEY;
+  const key = import.meta.env.VITE_GOOGLE_MAPS_KEY
   const center = `${country.latlng[0]},${country.latlng[1]}`
 
 

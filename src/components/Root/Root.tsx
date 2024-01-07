@@ -3,7 +3,7 @@ import "./Root.css"
 
 // components
 import Footer from "../Footer/FooterComponent/Footer";
-import Header from "../Header/HeaderComponent/Header";
+import Header from "../Header/Header";
 
 const Root = () => {
 

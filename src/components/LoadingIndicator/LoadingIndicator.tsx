@@ -5,7 +5,7 @@ const LoadingIndicator = () => {
     return (
         <>
             <RotatingLines
-                strokeColor="grey"
+                strokeColor="goldenrod"
                 strokeWidth="5"
                 animationDuration="0.75"
                 width="30"
