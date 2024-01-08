@@ -40,6 +40,7 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
     const minPopulation = countries.reduce((min, country) => {
         return (country.population < min) ? country.population : min;
     }, maxPopulation);
+    // initial populationFilter range is between the lowest and the highest population number
     const [populationFilter, setPopulationFilter] = useState<Range>({min: minPopulation, max: maxPopulation});
 
 
@@ -47,6 +48,9 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
     // setState is used to be able to alter the state in the parent element OverviewContainer
 
     useEffect(() => {
+        let filteringCancelled = false;
+
+        // only filter when there are countries to filter
         if (countries.length > 0) {
 
             const newFilteredCountries = countries
@@ -79,7 +83,12 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
                     return country.population >= populationFilter.min && country.population <= populationFilter.max;
                 });
 
-            setFilteredCountries(newFilteredCountries);
+            if (!filteringCancelled) setFilteredCountries(newFilteredCountries);
+        }
+
+        // cleanup
+        return () => {
+            filteringCancelled = true;
         }
 
     }, [countries, language, setFilteredCountries, checkedContinents, populationFilter, searchString])

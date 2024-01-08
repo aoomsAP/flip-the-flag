@@ -5,10 +5,9 @@ import styles from "./SortSettings.module.css"
 interface SortSettingsProps {
     sortValue: string,
     setSortValue: (sortValue: string) => void;
-    numberOfCountries: number,
 }
 
-const SortSettings = ({ sortValue, setSortValue, numberOfCountries }: SortSettingsProps) => {
+const SortSettings = ({ sortValue, setSortValue }: SortSettingsProps) => {
     const { lexicon } = useContext(SiteSettingsContext);
 
     // RETURNS element that contains settings to sort the data
@@ -19,10 +18,6 @@ const SortSettings = ({ sortValue, setSortValue, numberOfCountries }: SortSettin
     return (
         <>
             <div className={styles.sortToggle}>
-
-                <div>
-                    <strong>{numberOfCountries}</strong> {lexicon.countries_lowercase}
-                </div>
 
                 <div className="shuffle">
                     {/* sort value is a random number, so the sort state is always different with each click & triggers rerender */}

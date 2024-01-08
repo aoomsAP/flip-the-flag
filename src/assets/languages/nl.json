@@ -1,11 +1,14 @@
 {
     "nav_home": "Home",
     "nav_countries": "Landen",
-    "theme_change": "Klik op het icoontje om van thema te veranderen",
+    "language_toggle": "Klik op de knop om de site in het Engels te zien",
+    "theme_toggle": "Klik op de knop om van thema te veranderen",
     "locale_string": "nl-BE",
+
     "project_title": "Flip The Flag",
     "home_intro": "Ben je vaak niet zeker wanneer je een vlag emoji tegenkomt op sociale media? Wil je jouw geografische kennis uitbreiden? Flip The Flag voorziet een handig overzicht van vlaggen en info over landen om je te helpen in je ontdekkingsreis.",
     "country_spotlight": "Land in de Kijker",
+
     "country": "Land",
     "name": "Naam",
     "official_name": "Officiële naam",
@@ -28,7 +31,9 @@
     "un_member": "Lidstaat",
     "not_un_member": "Geen lidstaat",
     "country_unavailable": "[land onbeschikbaar]",
+
     "overview_of_countries": "Overzicht van landen",
+
     "filters": "Filters",
     "search_label": "Zoek een land",
     "status_label": "Land status",
@@ -41,12 +46,14 @@
     "population_from": "Van",
     "population_to": "Tot",
     "close_filters": "Verberg filters",
+
     "layout_flags_label": "Draai de vlaggen om het land te ontdekken",
     "layout_flags_with_name_label": "Draai de vlaggen om de hoofdstad te ontdekken",
     "layout_list_label": "Lijst van landen",
     "layout_flags": "Vlaggen",
     "layout_flags_with_name": "Vlaggen met naam",
     "layout_list": "Lijst",
+
     "countries_lowercase": "landen",
     "shuffle": "Random",
     "no_sorting": "Niet gesorteerd",
@@ -54,6 +61,7 @@
     "alphabetic_desc": "Alfabetisch [z-a]",
     "population_asc": "Inwoners [klein-groot]",
     "population_desc": "Inwoners [groot-klein]",
+
     "africa": "Afrika",
     "eastern_africa": "Oost-Afrika",
     "western_africa": "West-Afrika",
@@ -84,5 +92,6 @@
     "melanesia": "Melanesië",
     "australia_and_new_zealand": "Australië en Nieuw-Zeeland",
     "south_america": "Zuid-Amerika",
+    
     "footer_createdfor": "Gecreëerd voor"
 }

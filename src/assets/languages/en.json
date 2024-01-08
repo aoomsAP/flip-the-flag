@@ -1,7 +1,8 @@
 {
     "nav_home": "Home",
     "nav_countries": "Countries",
-    "theme_change": "Click on the icon to change the theme",
+    "language_toggle": "Click the button to see the site in Dutch",
+    "theme_toggle": "Click the button to change the theme",
     "locale_string": "en-US",
 
     "project_title": "Flip The Flag",

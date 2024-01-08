@@ -1,0 +1,21 @@
+.toggleButton {
+    color: rgb(var(--nav-link));
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: "Barlow Condensed", sans-serif;;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border: 1.5px outset rgba(var(--input-background), .2);
+    padding: .5rem .7rem;
+    height: 45px;
+}
+
+.toggleButton:hover {
+    color: rgb(var(--nav-link-hover));
+}
+
+.toggleButton strong {
+    font-weight: normal;
+    text-decoration: underline;
+}
