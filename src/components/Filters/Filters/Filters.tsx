@@ -1,4 +1,4 @@
-import { Country, Range } from "../../../types"
+import { Country, RadioOption, Range } from "../../../types"
 import styles from "./Filters.module.css"
 
 // contexts
@@ -7,11 +7,11 @@ import { SiteSettingsContext } from "../../../contexts/SiteSettingsContext"
 import { DataContext } from "../../../contexts/DataContext"
 
 // filter components
-import ContinentsFilter from "../ContinentsFilter/ContinentsFilter"
+import MultiCheckbox from "../MultiCheckbox/MultiCheckbox"
 import SearchFilter from "../SearchFilter/SearchFilter"
-import PopulationFilter from "../PopulationFilter/PopulationFilter"
-import StatusFilter from "../StatusFilter/StatusFilter"
 import HideFiltersButton from "../HideFiltersButton/HideFiltersButton"
+import RangeFilter from "../RangeFilter/RangeFilter"
+import RadioToggle from "../RadioToggle/RadioToggle"
 
 
 interface FiltersProps {
@@ -21,10 +21,24 @@ interface FiltersProps {
 const Filters = ({ setFilteredCountries }: FiltersProps) => {
     // contexts
     const { language, lexicon } = useContext(SiteSettingsContext);
-    const { countries } = useContext(DataContext);
+    const { countries, status, setStatus } = useContext(DataContext);
 
-    // state to show or hide filters on mobile
+    // show or hide filters on mobile
     const [showFilters, setShowFilters] = useState(true);
+
+    // status filter
+    const statusOptions: RadioOption[] = [
+        {
+            label: lexicon.status_independent,
+            value: "independent?status=true",
+            checked_condition: status === "independent?status=true",
+        },
+        {
+            label: lexicon.status_all,
+            value: "all",
+            checked_condition: status === "all",
+        }
+    ]
 
     // search filter
     const [searchString, setSearchString] = useState<string>("");
@@ -41,11 +55,11 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
         return (country.population < min) ? country.population : min;
     }, maxPopulation);
     // initial populationFilter range is between the lowest and the highest population number
-    const [populationFilter, setPopulationFilter] = useState<Range>({min: minPopulation, max: maxPopulation});
+    const [populationFilter, setPopulationFilter] = useState<Range>({ min: minPopulation, max: maxPopulation });
 
 
     // useEffect is used because the filters need to be reapplied after any adjustment to the below filters/dependencies
-    // setState is used to be able to alter the state in the parent element OverviewContainer
+    // state is used to be able to pass filtered countries to the parent element OverviewContainer
 
     useEffect(() => {
         let filteringCancelled = false;
@@ -94,9 +108,17 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
     }, [countries, language, setFilteredCountries, checkedContinents, populationFilter, searchString])
 
 
-    // RETURNS Filters aside, with:
-    // - a title container, which can be clicked to show or hide the Filters element, indicated by a chevron
-    // - a form with several Filters, and a button to hide the Filters element again
+    // RETURNS aside with FILTERS, with:
+
+    // a title container,
+    // which can be clicked to show or hide the Filters element, indicated by a chevron
+
+    // a form with several FILTERS
+    // - radio buttons that toggle STATUS of countries (triggers reloading of countries data)
+    // - search field that filters the countries based on SEARCH input
+    // - checkboxes that filters the countries on their CONTINENTS
+    // - a number range to filter countries on POPULATION size
+    // - a button to HIDE the Filters element again (only visible on mobile)
 
     return (
         <>
@@ -112,23 +134,27 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
 
                 {showFilters &&
                     <form className={styles.filtersForm}>
-                        <StatusFilter
-                            label={lexicon.status_label}
+                        <RadioToggle
+                            legend={lexicon.status_label}
+                            name="status"
+                            options={statusOptions}
+                            onChange={setStatus}
                         />
                         <SearchFilter
                             label={lexicon.search_label}
                             setSearchString={setSearchString}
                         />
-                        <ContinentsFilter
+                        <MultiCheckbox
                             label={lexicon.continents_label}
-                            allContinents={allContinents}
-                            checkedContinents={checkedContinents}
-                            setCheckedContinents={setCheckedContinents}
+                            name="continents"
+                            allOptions={allContinents}
+                            checkedItems={checkedContinents}
+                            setCheckedItems={setCheckedContinents}
                         />
-                        <PopulationFilter
+                        <RangeFilter
                             label={lexicon.population_label}
-                            populationRange={{min: minPopulation, max: maxPopulation}}
-                            setPopulationFilter={setPopulationFilter}
+                            range={{ min: minPopulation, max: maxPopulation }}
+                            setRangeFilter={setPopulationFilter}
                         />
 
                         <HideFiltersButton

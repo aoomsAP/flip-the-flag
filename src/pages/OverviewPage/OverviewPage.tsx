@@ -9,7 +9,7 @@ import { SiteSettingsContext } from "../../contexts/SiteSettingsContext";
 
 // components
 import PageTitle from "../../components/PageTitle/PageTitle";
-import Filters from "../../components/Filters/FiltersComponent/Filters";
+import Filters from "../../components/Filters/Filters/Filters";
 import ToTopButton from "../../components/ToTopButton/ToTopButton";
 import CountriesContainer from "../../components/CountriesContainer/CountriesContainer";
 

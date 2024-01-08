@@ -135,3 +135,10 @@ export interface Range {
     min: number,
     max: number,
 }
+
+export interface RadioOption {
+    label: string,
+    value: string,
+    checked_condition: boolean,
+    disabled?: boolean
+}

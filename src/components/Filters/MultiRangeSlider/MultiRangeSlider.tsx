@@ -2,9 +2,9 @@
 // https://dev.to/sandra_lewis/building-a-multi-range-slider-in-react-from-scratch-4dl1
 
 import { ChangeEvent, useCallback, useEffect, useState, useRef, useContext } from "react";
-import { SiteSettingsContext } from "../../contexts/SiteSettingsContext";
+import { SiteSettingsContext } from "../../../contexts/SiteSettingsContext";
 import classnames from "classnames";
-import { Range } from "../../types";
+import { Range } from "../../../types";
 import "./MultiRangeSlider.css";
 
 interface MultiRangeSliderProps {
