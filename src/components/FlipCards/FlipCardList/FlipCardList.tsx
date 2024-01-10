@@ -12,7 +12,7 @@ const FlipCardList = ({ countries }: FlipCardListProps) => {
 
     return (
         <>
-            <div className={styles.flipCardList}>
+            <div className={styles.flipcard_list}>
                 {countries.map((country) => {
                     return <FlipCard
                         country={country}

@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { SiteSettingsContext } from "../../../contexts/SiteSettingsContext";
 import styles from "./MultiCheckbox.module.css"
+import Button from "../../Button/Button";
 
 interface MultiCheckboxProps {
     label: string,
@@ -40,13 +41,21 @@ const MultiCheckbox = ({ label, name, allOptions, checkedItems, setCheckedItems 
                             value={option}
                             checked={checkedItems.includes(option)}
                             onChange={handleChange} />
-                        {lexicon[option.replace(" ","_")]}<br />
+                        {lexicon[option.replace(" ", "_")]}<br />
                     </React.Fragment>
                 })}
 
                 <div>
-                    <button type="button" value="all" onClick={() => setCheckedItems(allOptions)}>{lexicon.all}</button>
-                    <button type="button" value="clear" onClick={() => setCheckedItems([])}>{lexicon.clear}</button>
+                    <Button
+                        text={lexicon.all}
+                        type="button"
+                        value="all"
+                        onClick={() => setCheckedItems(allOptions)} />
+                    <Button
+                        text={lexicon.clear}
+                        type="button"
+                        value="clear"
+                        onClick={() => setCheckedItems([])} />
                 </div>
 
             </fieldset>

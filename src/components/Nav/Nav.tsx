@@ -1,21 +1,20 @@
-import { useContext } from "react"
-import { SiteSettingsContext } from "../../contexts/SiteSettingsContext"
-import MenuLink from "../Menu/MenuLink/MenuLink"
 import styles from "./Nav.module.css"
+import Menu from "../Menu/Menu/Menu"
+import { IMenuItem } from "../../types"
 
-const Nav = () => {
-    const { lexicon } = useContext(SiteSettingsContext)
+interface NavProps {
+    navItems: IMenuItem[],
+}
+
+const Nav = ({navItems}: NavProps) => {
 
     // RETURNS nav, with:
-    // - a menu, with two links
+    // - a menu, with the given amount of links
 
     return (
         <>
             <nav className={styles.nav} >
-                <menu className={styles.menu}>
-                    <MenuLink link="/" title={lexicon.nav_home} />
-                    <MenuLink link="/countries" title={lexicon.nav_countries} />
-                </menu>
+                <Menu items={navItems}/>
             </nav>
         </>
     )

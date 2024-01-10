@@ -1,4 +1,4 @@
-.mainContainer {
+.detail_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -7,23 +7,27 @@
     padding: 3rem 1rem;
 }
 
-.mapContainer,
-.infoContainer {
+.map_container,
+.info_container {
     flex-basis: 100%;
 }
 
-.mapContainer {
+.map_container {
     width: 100%;
     display: flex;
     justify-content: end;
 }
 
-.infoContainer {
+.info_container {
     font-size: 1.3rem;
 }
 
-@media all and (max-width: 800px) {
-    .mainContainer {
+@media all and (max-width: 900px) {
+    .map_container {
+        justify-content: center;
+    }
+
+    .detail_container {
         flex-direction: column;
         gap: 1rem;
     }

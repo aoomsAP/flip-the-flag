@@ -83,11 +83,9 @@ a:hover {
     text-decoration: underline;
 }
 
-/* input/button elements */
+/* input elements */
 
-button,
-input,
-select {
+input {
     font-family: "Heebo", sans-serif;
     padding: .3rem;
     border: 1.5px outset rgba(var(--body-link), .1);
@@ -95,25 +93,10 @@ select {
     background-color: rgba(var(--input-background), .1);
 }
 
-button, select {
-    cursor: pointer;
-}
-
 input:hover,
 input:focus,
-input:active,
-button:hover,
-button:focus,
-button:active,
-select:hover,
-select:focus,
-select:active {
+input:active {
     background-color: rgba(var(--input-background), .2);
-}
-
-option {
-    color: rgba(var(--body-text));
-    background-color: rgba(var(--option-background));
 }
 
 input[type=radio],

@@ -7,7 +7,7 @@ const ToTopButton = () => {
     return (
         <>
             <a href="#top"
-                className={styles.toTopButton}>
+                className={styles.to_top_button}>
                 <i className="bi bi-chevron-bar-up"></i>
             </a>
         </>

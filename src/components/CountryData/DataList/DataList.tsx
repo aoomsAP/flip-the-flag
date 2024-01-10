@@ -39,9 +39,10 @@ const DataList = ({ country,
     const { lexicon } = useContext(SiteSettingsContext);
 
     // RETURNS list of country data, with:
-    // - a list item, with label, followed by the respective data
+    // - a list item: a label, followed by the respective data
 
-    // includes every (optional) parameter that is passed to DataList component
+    // the data to be included in the list can be curated by
+    // passing the respective (optional) parameters to the DataList component
 
     return (
         <>

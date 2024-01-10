@@ -4,13 +4,13 @@
 import { ChangeEvent, useCallback, useEffect, useState, useRef, useContext } from "react";
 import { SiteSettingsContext } from "../../../contexts/SiteSettingsContext";
 import classnames from "classnames";
-import { Range } from "../../../types";
+import { IRange } from "../../../types";
 import "./MultiRangeSlider.css";
 
 interface MultiRangeSliderProps {
     min: number;
     max: number;
-    onChange: (range: Range) => void;
+    onChange: (range: IRange) => void;
 }
 
 const MultiRangeSlider = ({ min, max, onChange }: MultiRangeSliderProps) => {
@@ -62,7 +62,7 @@ const MultiRangeSlider = ({ min, max, onChange }: MultiRangeSliderProps) => {
     // RETURNS a range slider with two inputs & respective values underneath
 
     return (
-        <div className="rangeContainer">
+        <div className="range_container">
             <input
                 type="range"
                 min={min}

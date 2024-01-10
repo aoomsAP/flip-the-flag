@@ -1,4 +1,4 @@
-import { Country, RadioOption, Range } from "../../../types"
+import { Country, IRadioOption, IRange } from "../../../types"
 import styles from "./Filters.module.css"
 
 // contexts
@@ -6,13 +6,19 @@ import { useContext, useEffect, useState } from "react"
 import { SiteSettingsContext } from "../../../contexts/SiteSettingsContext"
 import { DataContext } from "../../../contexts/DataContext"
 
-// filter components
+// reusable filter components
 import MultiCheckbox from "../MultiCheckbox/MultiCheckbox"
 import SearchFilter from "../SearchFilter/SearchFilter"
-import HideFiltersButton from "../HideFiltersButton/HideFiltersButton"
 import RangeFilter from "../RangeFilter/RangeFilter"
 import RadioToggle from "../RadioToggle/RadioToggle"
+import Button from "../../Button/Button"
 
+
+// APPROACH: Filters is a separate component
+// - the complex functionality & states of the multiple/combined filters are kept in a separate component
+// - a shared state (e.g. "filteredCountries") is required,
+// to pass filtered data to parent component OverviewPage,
+// and further onto sibling component CountriesCountainer to be displayed
 
 interface FiltersProps {
     setFilteredCountries: (filteredCountries: Country[]) => void;
@@ -27,7 +33,7 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
     const [showFilters, setShowFilters] = useState(true);
 
     // status filter
-    const statusOptions: RadioOption[] = [
+    const statusOptions: IRadioOption[] = [
         {
             label: lexicon.status_independent,
             value: "independent?status=true",
@@ -55,12 +61,11 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
         return (country.population < min) ? country.population : min;
     }, maxPopulation);
     // initial populationFilter range is between the lowest and the highest population number
-    const [populationFilter, setPopulationFilter] = useState<Range>({ min: minPopulation, max: maxPopulation });
+    const [populationFilter, setPopulationFilter] = useState<IRange>({ min: minPopulation, max: maxPopulation });
 
 
-    // useEffect is used because the filters need to be reapplied after any adjustment to the below filters/dependencies
-    // state is used to be able to pass filtered countries to the parent element OverviewContainer
-
+    // useEffect is used because filteredCountries need to be set
+    // after any adjustment to the below filters/dependencies
     useEffect(() => {
         let filteringCancelled = false;
 
@@ -72,11 +77,11 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
                 // search
                 .filter(country => {
                     if (language === "en") {
-                        // search in English:
+                        // search in English: keep country if name starts with search string
                         return country.name.common.toLocaleLowerCase().startsWith(searchString.toLocaleLowerCase());
                     }
                     if (language === "nl") {
-                        // search in Dutch:
+                        // search in Dutch: keep country if *translated* name starts with search string
                         return country.translations.nld.common.toLocaleLowerCase().startsWith(searchString.toLocaleLowerCase());
                     }
                 })
@@ -114,18 +119,19 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
     // which can be clicked to show or hide the Filters element, indicated by a chevron
 
     // a form with several FILTERS
-    // - radio buttons that toggle STATUS of countries (triggers reloading of countries data)
-    // - search field that filters the countries based on SEARCH input
-    // - checkboxes that filters the countries on their CONTINENTS
-    // - a number range to filter countries on POPULATION size
-    // - a button to HIDE the Filters element again (only visible on mobile)
+    // - STATUS: radio buttons that toggle STATUS of countries (triggers reloading of countries data)
+    // - SEARCH: search field that filters on the name of countries
+    // - CONTINENTS: checkboxes that filter the countries on their continents
+    // - POPULATION: a number range to filter countries on population size
+
+    // - a button to HIDE the Filters element again & scroll to top of the page (only visible on mobile)
 
     return (
         <>
             <aside className={styles.filters}>
 
                 <div
-                    className={styles.titleContainer}
+                    className={styles.filters_title}
                     onClick={() => setShowFilters(current => current ? false : true)}
                 >
                     <h2>Filters</h2>
@@ -133,7 +139,7 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
                 </div>
 
                 {showFilters &&
-                    <form className={styles.filtersForm}>
+                    <form className={styles.filters_form}>
                         <RadioToggle
                             legend={lexicon.status_label}
                             name="status"
@@ -157,9 +163,15 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
                             setRangeFilter={setPopulationFilter}
                         />
 
-                        <HideFiltersButton
-                            setShowFilters={setShowFilters}
-                        />
+                        <Button
+                            type="button"
+                            text={lexicon.close_filters}
+                            title={lexicon.close_filters}
+                            strong
+                            onClick={() => {
+                                setShowFilters(false);
+                                window.scrollTo(0, 0);
+                            }} />
                     </form>
                 }
             </aside>

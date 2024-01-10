@@ -1,4 +1,4 @@
-.toTopButton {
+.to_top_button {
     display: flex;
     z-index: 1000;
     justify-content: center;
@@ -16,7 +16,7 @@
     background-color: rgba(var(--input-background), .1);
 }
 
-.toTopButton:hover {
+.to_top_button:hover {
     color: rgb(var(--body-link));
     background-color: rgba(var(--input-background), .2);
 }

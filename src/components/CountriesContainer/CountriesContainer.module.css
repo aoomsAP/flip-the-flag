@@ -1,11 +1,11 @@
-.mainContainer {
-    grid-area: mainContainer;
+.countries_container {
+    grid-area: countries_container;
     width: 100%;
     padding: 2rem 3rem;
 }
 
 @media all and (max-width: 800px) {
-    .mainContainer {
+    .countries_container {
         padding: 1rem;
     }
 }

@@ -1,6 +1,6 @@
 /* background image source: https://getwallpapers.com/collection/world-map-desktop-wallpaper-hd */
 
-.titleContainer {
+.title_container {
     grid-area: title;
     background-position: center;
     background-size: cover;
@@ -8,7 +8,7 @@
     padding: 1rem 2rem;
 }
 
-.titleContainerLight {
+.title_container_light {
     background-image: radial-gradient(
         rgba(255,255,255,0.5),
         rgba(255,255,255,0.5),
@@ -17,7 +17,7 @@
     background-color: white;
 }
 
-.titleContainerDark {
+.title_container_dark {
     background-image: url("/assets/images/worldmap-dark.png");
     background-color: black;
 }

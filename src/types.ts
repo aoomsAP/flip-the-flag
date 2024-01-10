@@ -131,14 +131,25 @@ export interface PostalCode {
 // Other interfaces
 // ----------------------------------------------------------------------------------
 
-export interface Range {
+export interface IMenuItem {
+    type: "item" | "link" | "navlink",
+    text: string,
+    url?: string,
+}
+
+export interface IRange {
     min: number,
     max: number,
 }
 
-export interface RadioOption {
+export interface IRadioOption {
     label: string,
     value: string,
     checked_condition: boolean,
     disabled?: boolean
+}
+
+export interface ISelectOption {
+    label: string,
+    value: string,
 }

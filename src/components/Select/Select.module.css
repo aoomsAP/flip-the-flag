@@ -1,0 +1,22 @@
+.select {
+    font-family: "Heebo", sans-serif;
+    padding: .3rem;
+    border: 1.5px outset rgba(var(--body-link), .1);
+    color: rgb(var(--body-text));
+    background-color: rgba(var(--input-background), .1);
+}
+
+.select {
+    cursor: pointer;
+}
+
+.select:hover,
+.select:focus,
+.select:active {
+    background-color: rgba(var(--input-background), .2);
+}
+
+.select option {
+    color: rgba(var(--body-text));
+    background-color: rgba(var(--option-background));
+}

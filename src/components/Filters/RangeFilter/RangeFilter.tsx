@@ -1,5 +1,4 @@
-import styles from "./RangeFilter.module.css"
-import { Range } from "../../../types";
+import { IRange } from "../../../types";
 
 // contexts
 import { useContext } from "react";
@@ -11,8 +10,8 @@ import LoadingIndicator from "../../LoadingIndicator/LoadingIndicator";
 
 interface RangeFilterProps {
     label: string,
-    range: Range
-    setRangeFilter: (populationFilter: Range) => void,
+    range: IRange
+    setRangeFilter: (populationFilter: IRange) => void,
 }
 
 const RangeFilter = ({ label, range, setRangeFilter }: RangeFilterProps) => {
@@ -26,7 +25,7 @@ const RangeFilter = ({ label, range, setRangeFilter }: RangeFilterProps) => {
 
     return (
         <>
-            <fieldset className={styles.population}>
+            <fieldset>
                 <legend>{label}</legend>
 
                 {!loading &&

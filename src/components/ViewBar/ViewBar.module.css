@@ -1,4 +1,4 @@
-.viewBar {
+.viewbar {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -8,12 +8,12 @@
     gap: 1rem;
 }
 
-.viewBar>div:nth-child(1) {
+.viewbar>div:nth-child(1) {
     flex-grow: 1;
 }
 
 @media all and (max-width: 800px) {
-    .viewBar {
+    .viewbar {
         justify-content: flex-start;
         flex-wrap: wrap;
         border-bottom: 1.5px solid rgba(var(--body-link), .1);

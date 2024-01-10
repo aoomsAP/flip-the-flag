@@ -2,7 +2,7 @@
     display: grid;
     grid-template-areas:
         "title title"
-        "filters mainContainer";
+        "filters countries_container";
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
 }
@@ -12,7 +12,7 @@
         grid-template-areas:
             "title"
             "filters"
-            "mainContainer";
+            "countries_container";
         grid-template-rows: auto auto 1fr;
         grid-template-columns: 1fr;
     }

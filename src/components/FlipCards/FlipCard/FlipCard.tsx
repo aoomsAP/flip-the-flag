@@ -27,19 +27,19 @@ const FlipCard = ({ country }: FlipCardProps) => {
 
     return (
         <>
-            <article className={styles.flipCard}>
-                <div className={styles.flipCardInner}>
+            <article className={styles.flipcard}>
+                <div className={styles.flipcard_inner}>
 
-                    <div className={styles.flipCardFront}>
+                    <div className={styles.flipcard_front}>
                         <Flag country={country} width="150px" height="100px" />
                         {layout === "flagsWithName" &&
-                            <p className={styles.countryName}>
+                            <p className={styles.country_name}>
                                 <Name country={country} />
                             </p>
                         }
                     </div>
 
-                    <div className={styles.flipCardBack}>
+                    <div className={styles.flipcard_back}>
                         <h2><Name country={country} /></h2>
                         <p><Capital country={country} /></p>
                         <Link to={`/countries/${country.name.common.toLocaleLowerCase()}`}>

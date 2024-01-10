@@ -18,7 +18,7 @@ const ViewBar = ({sortValue,setSortValue,numberOfCountries}: ViewBarProps) => {
 
     return (
         <>
-            <div className={styles.viewBar}>
+            <div className={styles.viewbar}>
                 <LayoutToggle />
 
                 <CountriesCount

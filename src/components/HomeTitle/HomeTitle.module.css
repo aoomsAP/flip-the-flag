@@ -1,0 +1,12 @@
+.title_container {
+    max-width: 70vw;
+    text-align: center;
+}
+
+.title_container h1 {
+    font-size: 3rem;
+}
+
+.title_container p {
+    font-size: 1.5rem;
+}

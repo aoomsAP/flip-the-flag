@@ -1,4 +1,4 @@
-.flipCardList {
+.flipcard_list {
     padding: 0;
     display: flex;
     flex-direction: row;
@@ -9,7 +9,7 @@
 }
 
 @media all and (max-width: 800px) {
-    .flipCardList {
+    .flipcard_list {
         justify-content: center;
     }
 }

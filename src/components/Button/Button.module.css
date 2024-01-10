@@ -1,0 +1,14 @@
+.button {
+    font-family: "Heebo", sans-serif;
+    padding: .3rem;
+    border: 1.5px outset rgba(var(--body-link), .1);
+    color: rgb(var(--body-text));
+    background-color: rgba(var(--input-background), .1);
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus,
+.button:hover:active {
+    background-color: rgba(var(--input-background), .2);
+}

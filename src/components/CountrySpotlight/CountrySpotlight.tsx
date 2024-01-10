@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../contexts/DataContext";
-import { SiteSettingsContext } from "../../contexts/SiteSettingsContext";
+import { useNavigate } from "react-router-dom";
 import { Country } from "../../types";
 import styles from "./CountrySpotlight.module.css";
 
+// contexts
+import { DataContext } from "../../contexts/DataContext";
+import { SiteSettingsContext } from "../../contexts/SiteSettingsContext";
+
 // components
-import { useNavigate } from "react-router-dom";
 import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
 
 // CountryData components
@@ -48,15 +50,19 @@ const CountrySpotlight = () => {
 
     if (!loading && country) return (
         <>
-            <section className={`${styles.countryContainer} ${theme === "light" ? `${styles.countryContainerLight}` : `${styles.countryContainerDark}`}`}>
-                <article className={styles.countrySpotlight}
+            <section className={`${styles.country_container} ${theme === "light" ? `${styles.country_container_light}` : `${styles.country_container_dark}`}`}>
+
+                <article className={styles.country_spotlight}
                     onClick={() => navigate(`/countries/${country.name.common.toLocaleLowerCase()}`)}>
 
                     <h2>{lexicon.country_spotlight}: <Name country={country} /></h2>
-                    <div className={styles.randomCountry}>
+                    
+                    <div className={styles.random_country}>
+
                         <figure>
                             <Flag country={country} width={"100%"} height={"100%"} />
                         </figure>
+
                         <DataList
                             country={country}
                             capital
@@ -66,14 +72,16 @@ const CountrySpotlight = () => {
                             population
                             language
                         />
+
                     </div>
 
                 </article>
+
             </section>
         </>
     )
 
-    // if the country can't be found or countries are still loading, returns loading indicator
+    // if the country can't be found or countries are still loading, return loading indicator
 
     if (!country || loading) return <LoadingIndicator />
 }

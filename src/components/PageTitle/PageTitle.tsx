@@ -15,7 +15,7 @@ const PageTitle = ({title}: PageTitleProps) => {
 
     return (
         <>
-            <section className={`${styles.titleContainer} ${theme === "light" ? `${styles.titleContainerLight}` : `${styles.titleContainerDark}`}`}>
+            <section className={`${styles.title_container} ${theme === "light" ? `${styles.title_container_light}` : `${styles.title_container_dark}`}`}>
                 <h1 className={styles.title}>
                     {title}
                 </h1>

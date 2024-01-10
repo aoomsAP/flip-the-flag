@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import styles from "./MenuLink.module.css"
 
 interface MenuLinkProps {
-    link: string,
+    link: string | undefined,
     title: string,
 }
 
@@ -10,10 +10,10 @@ const MenuLink = ({ link, title }: MenuLinkProps) => {
 
     return (
         <>
-            <li className={styles.item}>
-                <NavLink to={link} className={({ isActive }) => isActive ? "active" : "notactive"}>
+            <li className={styles.link}>
+                <Link to={link ?? ""} >
                     {title}
-                </NavLink>
+                </Link>
             </li>
         </>
     )

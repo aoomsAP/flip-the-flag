@@ -1,22 +1,22 @@
 /* FlipCard design based on: https://www.w3schools.com/howto/howto_css_flip_card.asp */
 
-.flipCardBack a {
+.flipcard_back a {
   color: rgb(var(--nav-link));
   text-decoration: underline;
 }
 
-.flipCardBack a:hover {
+.flipcard_back a:hover {
   color: rgb(var(--nav-link-hover));
   ;
 }
 
-.flipCard {
+.flipcard {
   width: 200px;
   height: 200px;
   perspective: 800px;
 }
 
-.flipCardInner {
+.flipcard_inner {
   position: relative;
   display: flex;
   justify-content: center;
@@ -28,12 +28,12 @@
   transform-style: preserve-3d;
 }
 
-.flipCard:hover .flipCardInner {
+.flipcard:hover .flipcard_inner {
   transform: rotateY(180deg);
 }
 
-.flipCardFront,
-.flipCardBack {
+.flipcard_front,
+.flipcard_back {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -42,13 +42,13 @@
   backface-visibility: hidden;
 }
 
-.flipCardFront {
+.flipcard_front {
   height: 200px;
   width: 200px;
   transition: all .8s;
 }
 
-.flipCardBack {
+.flipcard_back {
   margin: 0;
   padding: 0;
   color: white;
@@ -63,29 +63,29 @@
   transition: all .8s;
 }
 
-.flipCardBack p {
+.flipcard_back p {
   margin: 0;
   padding: .5rem;
 }
 
-.flipCardBack h2 {
+.flipcard_back h2 {
   font-size: 1.2rem;
   margin: 0;
   padding: .5rem;
 }
 
-.flipCardFront img {
+.flipcard_front img {
   transition: all .8s;
 }
 
-.flipCard:hover .flipCardFront,
-.flipCard:hover .flipCardFront img {
+.flipcard:hover .flipcard_front,
+.flipcard:hover .flipcard_front img {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
 
-.flipCard:hover .countryName {
+.flipcard:hover .country_name {
   display: none;
 }

@@ -8,13 +8,13 @@ interface ToggleButtonProps {
     title: string;
 }
 
-const ToggleButton = ({onClick,condition,option1,option2,title}: ToggleButtonProps) => {
+const ToggleButton = ({ onClick, condition, option1, option2, title }: ToggleButtonProps) => {
 
     // RETURNS button that toggles between two options
 
     return (
         <>
-            <button className={styles.toggleButton}
+            <button className={styles.toggle_button}
                 title={title}
                 onClick={onClick}>
                 {condition

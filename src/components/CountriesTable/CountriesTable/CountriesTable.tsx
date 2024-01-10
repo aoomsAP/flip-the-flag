@@ -1,14 +1,15 @@
-import styles from "./Table.module.css"
+import styles from "./CountriesTable.module.css"
 import { Country } from "../../../types"
 import { useContext } from "react";
 import { SiteSettingsContext } from "../../../contexts/SiteSettingsContext";
-import TableRow from "../TableRow/TableRow";
+import CountriesTableRow from "../CountriesTableRow/CountriesTableRow";
 
-interface TableProps {
+
+interface CountriesTableProps {
     countries: Country[],
 }
 
-const Table = ({ countries }: TableProps) => {
+const CountriesTable = ({ countries }: CountriesTableProps) => {
     const { lexicon } = useContext(SiteSettingsContext);
 
     // RETURNS table of countries
@@ -16,7 +17,7 @@ const Table = ({ countries }: TableProps) => {
 
     return (
         <>
-            <div className={styles.tableContainer}>
+            <div className={styles.table_container}>
                 <table className={styles.table}>
                     <thead>
                         <tr>
@@ -29,7 +30,7 @@ const Table = ({ countries }: TableProps) => {
                     </thead>
                     <tbody>
                         {countries.map((country) => {
-                            return <TableRow
+                            return <CountriesTableRow
                                 country={country}
                                 key={country.name.common}
                             />
@@ -41,4 +42,4 @@ const Table = ({ countries }: TableProps) => {
     )
 }
 
-export default Table
+export default CountriesTable

@@ -26,26 +26,28 @@ const DetailPage = () => {
     const country: Country | undefined = countries.find(c => c.name.common.toLocaleLowerCase() === name?.toLocaleLowerCase());
 
     // RETURNS detail page, with:
-    // - a title wrapper
+    // - a page title wrapper
     // - a map
-    // - a list of details about the country
+    // - several lists of details about the country
 
     if (country && !loading) return (
         <>
             <main>
-                <PageTitle title={<>
-                    <Name country={country} />
-                    &nbsp;
-                    <Flag country={country} width={"45px"} height={"100%"} />
-                </>} />
+                <PageTitle
+                    title={<>
+                        <Name country={country} />
+                        &nbsp;
+                        <Flag country={country} width={"45px"} height={"100%"} />
+                    </>}
+                />
 
-                <section className={styles.mainContainer}>
+                <section className={styles.detail_container}>
 
-                    <article className={styles.mapContainer}>
+                    <article className={styles.map_container}>
                         <CountryMap country={country} />
                     </article>
 
-                    <article className={styles.infoContainer}>
+                    <article className={styles.info_container}>
                         <DataList country={country}
                             officialName
                             status

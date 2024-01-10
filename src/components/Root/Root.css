@@ -12,10 +12,45 @@ header {
     grid-area: header;
 }
 
+header {    
+    color: rgb(var(--nav-text));
+    background: linear-gradient(rgb(var(--nav-background)), black);
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center
+}
+
+header a {
+    color: rgb(var(--nav-link));
+}
+
+header a:hover {
+    color: rgb(var(--nav-link-hover));
+}
+
 main {
     grid-area: main;
 }
 
 footer {
     grid-area: footer;
+}
+
+footer {    
+    color: rgb(var(--nav-text));
+    background: linear-gradient(rgb(var(--nav-background)), black);
+    padding: 1rem;
+    text-align: center;
+}
+
+footer a {
+    color: rgb(var(--nav-link));
+}
+
+footer a:hover {
+    color: rgb(var(--nav-link-hover));
 }

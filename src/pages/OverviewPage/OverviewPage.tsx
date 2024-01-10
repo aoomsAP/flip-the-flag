@@ -22,7 +22,7 @@ const OverviewPage = () => {
     const [sortValue, setSortValue] = useState<string>("");
     const [filteredCountries, setFilteredCountries] = useState<Country[]>([...countries]);
 
-    // the below function sorts the filtered countries
+    // the below function sorts countries
     const sortCountries = (a: Country, b: Country) => {
 
         // random/shuffle sorting (value "random" will be often followed by random number, so needs to be checked differently than the presets with literal values)
@@ -52,6 +52,7 @@ const OverviewPage = () => {
         }
     };
 
+    // filtered countries are sorted
     const filteredAndSortedCountries = filteredCountries
         .sort(sortCountries);
 

@@ -1,6 +1,5 @@
 import React from "react";
-import styles from "./RadioToggle.module.css"
-import { RadioOption } from "../../../types";
+import { IRadioOption } from "../../../types";
 
 // RETURNS fieldset to radio toggle between options
 // required props:
@@ -12,7 +11,7 @@ import { RadioOption } from "../../../types";
 interface RadioToggleProps {
     legend: string,
     name: string,
-    options: RadioOption[],
+    options: IRadioOption[],
     onChange: (value: string) => void;
 }
 
@@ -24,7 +23,7 @@ const RadioToggle = ({ legend, name, options, onChange }: RadioToggleProps) => {
 
     return (
         <>
-            <fieldset className={styles.radio_toggle}>
+            <fieldset>
                 <legend>{legend}</legend>
                 {options.map(option => {
                     return <React.Fragment key={option.value}>

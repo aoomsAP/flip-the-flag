@@ -6,7 +6,7 @@ import styles from "./CountriesContainer.module.css"
 // components
 import ViewBar from "../ViewBar/ViewBar"
 import FlipCardList from "../FlipCards/FlipCardList/FlipCardList"
-import Table from "../Table/Table/Table"
+import CountriesTable from "../CountriesTable/CountriesTable/CountriesTable"
 
 interface CountriesContainerProps {
     sortValue: string,
@@ -23,14 +23,14 @@ const CountriesContainer = ({sortValue,setSortValue,filteredAndSortedCountries}:
 
     return (
         <>
-            <section className={styles.mainContainer}>
+            <section className={styles.countries_container}>
 
                 <ViewBar sortValue={sortValue} setSortValue={setSortValue} numberOfCountries={filteredAndSortedCountries.length} />
 
                 {(layout === "flags" || layout === "flagsWithName") &&
                     <FlipCardList countries={filteredAndSortedCountries} />}
                 {layout === "list" &&
-                    <Table countries={filteredAndSortedCountries} />}
+                    <CountriesTable countries={filteredAndSortedCountries} />}
 
             </section>
         </>

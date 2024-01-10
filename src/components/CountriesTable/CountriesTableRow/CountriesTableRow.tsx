@@ -1,4 +1,4 @@
-import styles from "./TableRow.module.css"
+import styles from "./CountriesTableRow.module.css"
 import { Country } from "../../../types"
 import { useNavigate } from 'react-router-dom';
 
@@ -9,11 +9,11 @@ import Population from "../../CountryData/Data/Population"
 import Subregion from "../../CountryData/Data/Subregion"
 import Flag from "../../CountryData/Flag/Flag"
 
-interface TableRowProps {
+interface CountriesTableRowProps {
     country: Country,
 }
 
-const Table = ({ country }: TableRowProps) => {
+const CountriesTableRow = ({ country }: CountriesTableRowProps) => {
 
     // useNavigate hook allows navigation to another page via react router dom
     // inspired by https://stackoverflow.com/a/71002189
@@ -38,4 +38,4 @@ const Table = ({ country }: TableRowProps) => {
     )
 }
 
-export default Table
+export default CountriesTableRow

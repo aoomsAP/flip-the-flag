@@ -7,7 +7,7 @@
     border-right:  1.5px solid rgba(var(--body-link), .1);
 }
 
-.titleContainer {
+.filters_title {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,17 +17,17 @@
     cursor: pointer;
 }
 
-.titleContainer h2 {
+.filters_title h2 {
     font-size: 1.5rem;
     margin: .5rem 0;
 }
 
-.titleContainer p {
+.filters_title p {
     font-size: 2rem;
     margin: 0;
 }
 
-.filtersForm {
+.filters_form {
     display: flex;
     flex-direction: column;
     padding: 1.5rem 0;
@@ -35,19 +35,23 @@
     width: 230px;
 }
 
-.filtersForm fieldset {
+.filters_form fieldset {
     border: 1px solid rgba(var(--input-background),.5);
     padding: 1rem .7rem;
 }
 
-.filtersForm fieldset legend {
+.filters_form fieldset legend {
     font-size: 1.2rem;
     padding: 0 .5rem;
     color: rgba(var(--body-link));
 }
 
+.filters_form fieldset:last-child {
+    margin-bottom: 1rem;
+}
+
 /* hide hideButton on desktop */
-.filtersForm>button {
+.filters_form>button {
     display: none;
 }
 
@@ -56,29 +60,29 @@
         border: none;
     }
 
-    .titleContainer {
+    .filters_title {
         padding: .5rem 1rem;
         background-color: rgba(var(--input-background),.1);
         border: 1.5px solid rgba(var(--body-link), .1);
     }
 
-    .titleContainer h2 {
+    .filters_title h2 {
         font-size: 1.2rem;
         margin: .3rem 0;
     }
 
-    .titleContainer p {
+    .filters_title p {
         font-size: 2rem;
         margin: 0;
     }
 
-    .filtersForm {
+    .filters_form {
         border-bottom: 1.5px solid rgba(var(--body-link), .1);
         width: 100%;
     }
 
     /* show hideButton */
-    .filtersForm>button {
+    .filters_form>button {
         display: block;
     }
 }
