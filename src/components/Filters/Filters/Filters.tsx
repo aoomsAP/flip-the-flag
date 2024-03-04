@@ -139,7 +139,8 @@ const Filters = ({ setFilteredCountries }: FiltersProps) => {
                 </div>
 
                 {showFilters &&
-                    <form className={styles.filters_form}>
+                    <form className={styles.filters_form}
+                        onSubmit={(e) => e.preventDefault()}>
                         <RadioToggle
                             legend={lexicon.status_label}
                             name="status"
