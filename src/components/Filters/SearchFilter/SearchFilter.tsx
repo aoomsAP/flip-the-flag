@@ -17,6 +17,7 @@ const SearchFilter = ({label, setSearchString }: SearchFilterProps) => {
                     type="search"
                     name="search"
                     onChange={e => setSearchString(e.target.value)}
+                    onSubmit={e => e.preventDefault()}
                 />
             </fieldset>
         </>
